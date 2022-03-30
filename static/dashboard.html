@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Dashboard</title>
+<script>
+	window.onload = function (e) {
+		document.getElementById("btn").onclick = (e) => {
+			console.log('Fetching');
+
+			fetch('/shutdown', {
+				method: 'POST',
+			})
+			.then(() => console.log('Shutting down'))
+			.catch((err) => console.error(err));
+		}
+	}
+</script>
+	</head>
+	<body>
+		<button id="btn">Shutdown</button>
+	</body>
+</html>
